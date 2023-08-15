@@ -1,12 +1,85 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}Manu's site{% endblock %}</title>
+    <style>
+            .container {
+        width: 80%;
+        margin: 0 auto;
+        }
+        header {
+            background: #55d6aa;
+            position: fixed; /* Set the navbar to fixed position */
+            top: 0; /* Position the navbar at the top of the page */
+            width: 100%; /* Full width */
+        }
+
+        nav {
+            float: initial;
+            margin-top: 0px;
+            margin-bottom: auto;
+        }
+        header ::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-left: 50px;
+            padding-top: 25px;
+            padding-bottom: 20px;
+        }
+
+        nav a {
+            color: #444;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+        body {
+            padding-top: 65px;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <title>{% block title %}ManU{% endblock %}</title>
 </head>
 <body>
-    <div id="content", name="content">
-        {% block content %}
-        <h1>Hello buddies!</h1>
-        {% endblock %}
+    <header>
+        <div class="container">
+            <nav>
+                <li><a href="/">Home</a></li>
+                <li><a href="/create">Create</a></li>
+                <li><a href="/2">View</a></li>
+            </nav>
+        </div>
+    </header>
+    <div id="content", name="content", class="main">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <h1 class="mt-2">Hello buddies!</h1>
+                <hr class="mt-0 mb-4">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
