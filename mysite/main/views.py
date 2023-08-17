@@ -43,4 +43,4 @@ def create(response):
     return render(response, "main/create.html", {"form":form})
 
 def v1(response):
-    return HttpResponse("<h1>View 1!</h1>")
+    return HttpResponse("<h1>View 1! <br >Add - later I want to display the information about the logged person here. <br>Check the last minutes of login logout tutorial.</h1>")
